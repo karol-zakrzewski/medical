@@ -6,3 +6,5 @@ export const paths = {
 export const urls = {
   endpoint: 'https://countries.trevorblades.com/',
 }
+
+export const profileCountryCode = 'PL'
