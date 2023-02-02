@@ -1,7 +1,7 @@
+import { GetCountriesQuery } from '@/gql/graphql'
 import { paths } from '@/utils/consts'
 import Link from 'next/link'
 import React from 'react'
-import { Countries } from '../Countries.types'
 
 export type PickByValue<T extends object, K extends keyof T> = Pick<
   T,
@@ -9,15 +9,15 @@ export type PickByValue<T extends object, K extends keyof T> = Pick<
 >[keyof Pick<T, K>]
 
 type Props = {
-  country: PickByValue<Countries, 'countries'>[number]
+  country: PickByValue<GetCountriesQuery, 'countries'>[number]
 }
 
 const CountryElement = ({ country }: Props) => {
   return (
-    <Link href={`${paths.COUNTRIES}/${country.code.toLowerCase()}`}>
+    <Link href={`${paths.COUNTRIES}/${country?.code.toLowerCase()}`}>
       <div className="m-2 w-60 p-1 bg-gray-100 border rounded-md">
-        <h2>{country.name}</h2>
-        <p>{country.code}</p>
+        <h2>{country?.name}</h2>
+        <p>{country?.code}</p>
       </div>
     </Link>
   )

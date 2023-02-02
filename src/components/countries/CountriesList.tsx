@@ -1,8 +1,8 @@
+import { GetCountriesQuery } from '@/gql/graphql'
 import React from 'react'
-import { Countries } from './Countries.types'
 import CountryElement from './country/CountryElement'
 
-type Props = Countries
+type Props = GetCountriesQuery
 
 const CountriesList = ({ countries }: Props) => {
   return (

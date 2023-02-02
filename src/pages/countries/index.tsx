@@ -1,10 +1,10 @@
 import React from 'react'
 import { request } from 'graphql-request'
-import { Countries as CountriesType } from '@/components/countries/Countries.types'
 import CountriesList from '@/components/countries/CountriesList'
 import { urls } from '@/utils/consts'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { countriesQuery } from '@/components/countries/Countries.queries'
+import { GetCountriesQuery } from '@/gql/graphql'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -20,10 +20,9 @@ const Countries = ({ data }: Props) => {
 export default Countries
 
 export const getStaticProps: GetStaticProps<{
-  data: CountriesType
+  data: GetCountriesQuery
 }> = async () => {
-  const data = await request<CountriesType>(urls.endpoint, countriesQuery)
-
+  const data = await request(urls.endpoint, countriesQuery)
   if (!data) {
     return {
       notFound: true,
