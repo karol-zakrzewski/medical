@@ -1,12 +1,8 @@
 import { GetCountriesQuery } from '@/gql/graphql'
 import { paths } from '@/utils/consts'
+import { PickByValue } from '@/utils/general'
 import Link from 'next/link'
 import React from 'react'
-
-export type PickByValue<T extends object, K extends keyof T> = Pick<
-  T,
-  K
->[keyof Pick<T, K>]
 
 type Props = {
   country: PickByValue<GetCountriesQuery, 'countries'>[number]

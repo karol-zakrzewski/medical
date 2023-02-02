@@ -2,8 +2,9 @@ import React from 'react'
 import { useQuery } from '@apollo/client'
 import { profileCountryCode } from '@/utils/consts'
 import { countryQuery } from '@/components/countries/Countries.queries'
+import ProfileCard from '@/components/profile/ProfileCard'
 
-const Profiles = () => {
+const Profile = () => {
   const { loading, error, data } = useQuery(countryQuery, {
     variables: { code: profileCountryCode },
   })
@@ -15,9 +16,14 @@ const Profiles = () => {
     return <p>Error : {error.message}</p>
   }
 
-  console.log(data)
-
-  return <div>Profiles</div>
+  if (data) {
+    return (
+      <div>
+        <h1>Profile</h1>
+        <ProfileCard profile={data.country} />
+      </div>
+    )
+  }
 }
 
-export default Profiles
+export default Profile

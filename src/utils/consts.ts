@@ -1,6 +1,6 @@
 export const paths = {
   COUNTRIES: '/countries',
-  PROFILES: '/profiles',
+  PROFILE: '/profile',
 }
 
 export const urls = {
