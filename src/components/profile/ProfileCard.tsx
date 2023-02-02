@@ -10,11 +10,12 @@ type Props = {
 
 const ProfileCard = ({ profile }: Props) => {
   return (
-    <div>
-      <div className="m-2 w-60 p-1 bg-gray-100 border rounded-md">
+    <div className="m-2 w-60 p-1 border rounded-md bg-white flex justify-center">
+      <div>
         <Link href={`${paths.COUNTRIES}/${profile?.code.toLowerCase()}`}>
-          <h2>{profile?.name}</h2>
-          <p>{profile?.code}</p>
+          <p>
+            {profile?.code} | {profile?.name}
+          </p>
         </Link>
       </div>
     </div>

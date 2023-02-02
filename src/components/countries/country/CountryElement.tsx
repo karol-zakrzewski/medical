@@ -10,12 +10,13 @@ type Props = {
 
 const CountryElement = ({ country }: Props) => {
   return (
-    <Link href={`${paths.COUNTRIES}/${country?.code.toLowerCase()}`}>
-      <div className="m-2 w-60 p-1 bg-gray-100 border rounded-md">
-        <h2>{country?.name}</h2>
-        <p>{country?.code}</p>
-      </div>
-    </Link>
+    <div className="m-2 w-60 bg-white border rounded-md border-l-indigo-500 border-l-4">
+      <Link href={`${paths.COUNTRIES}/${country?.code.toLowerCase()}`}>
+        <p className="p-3 text-center">
+          {country?.code} | {country?.name}
+        </p>
+      </Link>
+    </div>
   )
 }
 

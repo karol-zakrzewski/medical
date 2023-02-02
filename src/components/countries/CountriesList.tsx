@@ -6,7 +6,7 @@ type Props = GetCountriesQuery
 
 const CountriesList = ({ countries }: Props) => {
   return (
-    <div>
+    <div className="flex justify-center flex-wrap">
       {countries.map((country) => {
         return <CountryElement key={country.code} country={country} />
       })}

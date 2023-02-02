@@ -18,8 +18,8 @@ const Profile = () => {
 
   if (data) {
     return (
-      <div>
-        <h1>Profile</h1>
+      <div className="m-3 flex flex-col justify-center items-center">
+        <h1 className="text-3xl">Profile</h1>
         <ProfileCard profile={data.country} />
       </div>
     )

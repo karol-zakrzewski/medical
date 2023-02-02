@@ -10,8 +10,8 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const Countries = ({ data }: Props) => {
   return (
-    <div>
-      <h1>Countries</h1>
+    <div className="m-3 flex flex-col justify-center items-center flex-wrap">
+      <h1 className="text-3xl mb-5">Countries</h1>
       <CountriesList countries={data.countries} />
     </div>
   )
