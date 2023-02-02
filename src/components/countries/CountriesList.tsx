@@ -1,10 +1,8 @@
 import React from 'react'
-import { Country as CountryType } from './Countries.types'
+import { Countries } from './Countries.types'
 import CountryElement from './country/CountryElement'
 
-type Props = {
-  countries: CountryType[]
-}
+type Props = Countries
 
 const CountriesList = ({ countries }: Props) => {
   return (
