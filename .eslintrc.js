@@ -43,6 +43,9 @@ module.exports = {
     complexity: ['error', 6],
     curly: 'error',
   },
+  globals: {
+    JSX: 'readonly',
+  },
   settings: {
     react: {
       version: '18.0.0',

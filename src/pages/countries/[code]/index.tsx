@@ -1,9 +1,10 @@
 import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { urls } from '@/utils/consts'
+import { paths, urls } from '@/utils/consts'
 import request from 'graphql-request'
 import { countriesPathsQuery, countryQuery } from '@/utils/queries'
 import { GetCountryQuery } from '@/gql/graphql'
+import Link from '@/components/ui/link/Link'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -11,7 +12,8 @@ const Country = ({ data }: Props) => {
   const country = data.country
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex flex-col gap-3 items-center justify-center">
+      <Link href={paths.COUNTRIES}>Return</Link>
       <div className="w-60 mx-auto p-5 bg-white rounded-md shadow-md flex flex-col items-center">
         <h2 className="text-2xl bold mb-2">Country Details</h2>
         <p className="text-xl">

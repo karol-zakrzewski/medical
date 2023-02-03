@@ -1,17 +1,21 @@
 import React from 'react'
 import { request } from 'graphql-request'
 import CountriesList from '@/components/countries/CountriesList'
-import { urls } from '@/utils/consts'
+import { paths, urls } from '@/utils/consts'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { countriesQuery } from '@/utils/queries'
 import { GetCountriesQuery } from '@/gql/graphql'
+import Header from '@/components/ui/header/Header'
+import Link from '@/components/ui/link/Link'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const Countries = ({ data }: Props) => {
   return (
     <div className="m-3 flex flex-col justify-center items-center flex-wrap">
-      <h1 className="text-3xl mb-5">Countries</h1>
+      <Header title="Countries">
+        <Link href={paths.HOME}>Home</Link>
+      </Header>
       <CountriesList countries={data.countries} />
     </div>
   )

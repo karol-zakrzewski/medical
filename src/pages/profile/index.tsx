@@ -1,8 +1,10 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
-import { profileCountryCode } from '@/utils/consts'
+import { paths, profileCountryCode } from '@/utils/consts'
 import { profileCountryQuery } from '@/utils/queries'
 import CountryElement from '@/components/countries/country/CountryElement'
+import Header from '@/components/ui/header/Header'
+import Link from '@/components/ui/link/Link'
 
 const Profile = () => {
   const { loading, error, data } = useQuery(profileCountryQuery, {
@@ -22,7 +24,9 @@ const Profile = () => {
   const { __typename, ...countryData } = data.country
   return (
     <div className="m-3 flex flex-col justify-center items-center">
-      <h1 className="text-3xl">Profile</h1>
+      <Header title="Countries">
+        <Link href={paths.HOME}>Home</Link>
+      </Header>
       <CountryElement country={countryData} />
     </div>
   )
