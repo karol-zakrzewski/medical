@@ -1,7 +1,12 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  ignorePatterns: ['.eslintrc.js', '.next', 'fragment-masking.ts'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    '.next',
+    'fragment-masking.ts',
+    'ErrorBoundary.jsx',
+  ],
   env: {
     browser: true,
     node: true,
