@@ -3,7 +3,7 @@ import { request } from 'graphql-request'
 import CountriesList from '@/components/countries/CountriesList'
 import { urls } from '@/utils/consts'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { countriesQuery } from '@/components/countries/Countries.queries'
+import { countriesQuery } from '@/utils/queries'
 import { GetCountriesQuery } from '@/gql/graphql'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>

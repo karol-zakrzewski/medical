@@ -2,10 +2,7 @@ import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { urls } from '@/utils/consts'
 import request from 'graphql-request'
-import {
-  countriesPathsQuery,
-  countryQuery,
-} from '@/components/countries/Countries.queries'
+import { countriesPathsQuery, countryQuery } from '@/utils/queries'
 import { GetCountryQuery } from '@/gql/graphql'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>

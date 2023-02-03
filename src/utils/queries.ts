@@ -1,4 +1,4 @@
-import { graphql } from '../../gql'
+import { graphql } from '../gql'
 
 export const countriesPathsQuery = graphql(`
   query GetCountriesPaths {
@@ -26,6 +26,15 @@ export const countryQuery = graphql(`
       languages {
         name
       }
+    }
+  }
+`)
+
+export const profileCountryQuery = graphql(`
+  query GetProfileCountry($code: ID!) {
+    country(code: $code) {
+      code
+      name
     }
   }
 `)

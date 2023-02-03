@@ -16,6 +16,7 @@ const documents = {
     "\n  query GetCountriesPaths {\n    countries {\n      code\n    }\n  }\n": types.GetCountriesPathsDocument,
     "\n  query GetCountries {\n    countries {\n      code\n      name\n    }\n  }\n": types.GetCountriesDocument,
     "\n  query GetCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n      emoji\n      languages {\n        name\n      }\n    }\n  }\n": types.GetCountryDocument,
+    "\n  query GetProfileCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n    }\n  }\n": types.GetProfileCountryDocument,
 };
 
 /**
@@ -44,6 +45,10 @@ export function graphql(source: "\n  query GetCountries {\n    countries {\n    
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query GetCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n      emoji\n      languages {\n        name\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n      emoji\n      languages {\n        name\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query GetProfileCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n    }\n  }\n"): (typeof documents)["\n  query GetProfileCountry($code: ID!) {\n    country(code: $code) {\n      code\n      name\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  ignorePatterns: ['.eslintrc.js', '.next'],
+  ignorePatterns: ['.eslintrc.js', '.next', 'fragment-masking.ts'],
   env: {
     browser: true,
     node: true,
@@ -32,6 +32,14 @@ module.exports = {
     'import/no-unresolved': 'error',
     'functional/no-let': 'error',
     'no-nested-ternary': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true,
+      },
+    ],
     complexity: ['error', 6],
     curly: 'error',
   },

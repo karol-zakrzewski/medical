@@ -1,5 +1,3 @@
-/* eslint-disable no-redeclare */
-/* eslint-disable no-unused-vars */
 import {
   ResultOf,
   TypedDocumentNode as DocumentNode,
