@@ -26,6 +26,7 @@ npm run start
 
 ## Environments
 
-|           | URL                    |
-| --------- | ---------------------- |
-| localhost | http://localhost:3000/ |
+|           | URL                            |
+| --------- | ------------------------------ |
+| localhost | http://localhost:3000/         |
+| live demo | https://j-medical.netlify.app/ |
